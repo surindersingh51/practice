@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include<unistd.h>
+#include<pthread.h>
+#include<stdlib.h>
+
+
+
+void * thread_sum(void *);
+int Sum=0;//initialised sum to zero 
+pthread_mutex_t mVar=PTHREAD_MUTEX_INITIALIZER;//used mutex
+
+main()
+{
+    int Number,Count; //global variables
+    pthread_t tid;//creatred thread
+    printf("Enter Number Up to Which You want to Sum :");
+    scanf("%d",&Number);    
+    pthread_create(&tid,NULL,thread_sum,(void *)&Number);
+    for(Count=1;Count<=Number;Count=Count+2)
+    {
+        pthread_mutex_lock(&mVar);
+        Sum=Sum + Count;
+        pthread_mutex_unlock(&mVar);
+    }
+    
+    pthread_join(tid,NULL);
+    
+    printf( "Sum is : %d \n",Sum);
+//    return 0;
+}
+
+void *thread_sum(void *no)
+{
+    int *Number,Count;
+    Number=(int*)no;
+    
+    for(Count=2;Count<=*Number;Count=Count+2)
+    {
+        pthread_mutex_lock(&mVar);
+        Sum=Sum + Count;
+        pthread_mutex_unlock(&mVar);
+    }
+    pthread_exit(NULL);    
+}
