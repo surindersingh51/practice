@@ -1,4 +1,4 @@
-c code to add numbers using mutex
+//c code to add numbers using mutex
 
 
 #include <stdio.h>
