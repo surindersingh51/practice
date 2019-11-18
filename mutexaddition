@@ -14,7 +14,7 @@ pthread_mutex_t mVar=PTHREAD_MUTEX_INITIALIZER;//used mutex
 
 main()
 {
-    int Number,Count; //global variables
+    int Number,Count;          //global variables
     pthread_t tid;//creatred thread
     printf("Enter Number Up to Which You want to Sum :");
     scanf("%d",&Number);    
