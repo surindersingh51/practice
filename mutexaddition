@@ -22,7 +22,7 @@ main()
     for(Count=1;Count<=Number;Count=Count+2)
     {
         pthread_mutex_lock(&mVar);
-        Sum=Sum + Count;
+            Sum=Sum + Count;
         pthread_mutex_unlock(&mVar);
     }
     
@@ -40,7 +40,7 @@ void *thread_sum(void *no)
     for(Count=2;Count<=*Number;Count=Count+2)
     {
         pthread_mutex_lock(&mVar);
-        Sum=Sum + Count;
+        Sum=  Sum + Count;
         pthread_mutex_unlock(&mVar);
     }
     pthread_exit(NULL);    
