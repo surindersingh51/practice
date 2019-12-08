@@ -22,5 +22,5 @@
         {
             printf("numbers are similar");
         }
-                return 0;
+                  return 0;
     }
