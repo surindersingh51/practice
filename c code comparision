@@ -1,0 +1,26 @@
+///code to compare three entered integers.
+#include <stdio.h>
+    int main() {    
+        int number1, number2, number3;
+        
+        printf("Enter three integers: ");
+        scanf("%d %d %d", &number1, &number2, &number3);
+        
+        if(number1 > number2 && number1 > number3)
+        {
+            printf(" number1 is greater");
+        }
+        else if(number2 > number1 && number2 >number3)
+        {
+            printf("number2 is greater");
+        }
+        else if(number3 > number1 && number3 > number2)
+        {
+            printf("number3 is greater");
+        }
+        else 
+        {
+            printf("numbers are similar");
+        }
+                return 0;
+    }
