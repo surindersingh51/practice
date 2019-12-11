@@ -23,7 +23,7 @@ main()
     {
         pthread_mutex_lock(&mVar);
             Sum=Sum + Count;
-        pthread_mutex_unlock(&mVar);
+          pthread_mutex_unlock(&mVar);
     }
     
     pthread_join(tid,NULL);
