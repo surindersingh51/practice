@@ -123,13 +123,5 @@ int main()           //completed main function
     	printf("Failed to create the thread\n");
     	return 1;
     }
-    for(num_ints=0;num_ints<MAXINTS;num_ints++)
-        {
-        	printf("Enter your number=\n");
-        	scanf("%d",&set[num_ints]);
-
-        } disp_sorted(set);
-       disp_avg(average);
-    done=1; // user has finished entering data
-    return 0;
+    
 }
